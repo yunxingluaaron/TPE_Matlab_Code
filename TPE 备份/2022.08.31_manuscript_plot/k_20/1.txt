@@ -1,0 +1,8 @@
+
+在画far-field induce pore presurre的时候，k 和 k pt都改成了-17， 并且用了短的时间组合。这样做的原因是，因为如果都用-20，那么产生的pore pressure 在0.5 pa左右。到时间10e4的时候，会产生乱码。在TPA_evolution里面，n_time_point = 150;
+
+
+但是far-field induce pore pressure, 产生的问题是： 可能pressure decline的太快了？？？
+
+
+在画temprature evolution的时候，k 和 k pt都改成了-17， 并且k_t改成了10e3, 并且用了短的时间组合。这样做的原因是，不改成10e3, 会花10天时间加热一个plug, 不合理，n_time_point = 150;
