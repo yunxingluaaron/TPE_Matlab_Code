@@ -1,0 +1,44 @@
+
+文件夹2： 
+
+
+保存原因： 第一次画出符合时间scale的T-induce pressure, P-induce poressure, 已经total-effect stress符合趋势
+
+
+和之前的改变：
+
+0. 现在的半径为100/250, 0.4米， 换算成直径为 31 inch
+1. Lamda_1 和 Lamda_2都取了绝对值
+2. Viscosity 设置为1
+3. tau_0设置为了296
+4. c_d为10e8，但是在因为设置m_d = c_d/tao_0,所以这个还好。
+5. K_tp 和 k_pt的取值现在都为0
+6. 时间scale大幅度的增加，增加到了32000天，也就是87年
+
+
+
+发现的趋势：
+
+1. 和“文件夹1”相比，a的值的增大，不会改变T_induce pore pressure的起始时间，但是会改变T_induce pore pressure的降落时间
+2. b值对于T_induce pore pressure的影响，比a值要大
+3. c_d的增加，会显著延迟T_induce pore pressure的delay.
+
+
+
+存在的问题：
+
+1. 在上述讨论的过程中，无论a,b还是c_d值的影响，其实最后都是改变的T_induce pore pressure的曲线（所以说自己在调参的过程中，温度peak和pore pressure peak的吻合是合理的，因为此时的pore pressure是由于温度引起的，而不是pore fluid diffusion）
+   对于p_induce pore pressure的影响，目前还是未知
+
+2. 但是，鉴于T_induce pore pressure的产生是由于热传导，所以时间scale不是那么重要
+
+3. 在far-field stress loading的情况下，如果采用“长时间”的域, 那么画出来的far-field induce pore pressure没有时间顺序，而且时正时负 --但是因为这个引起的很小，不是大问题
+
+4. a,b,c_d的取值范围，现在并不合理，这个是次重要的
+
+5. 最重要的是，K_tp 和 k_pt的取值现在都为0，不能达成这个full-coupled的模型目标。
+
+
+下一步改进措施：
+
+1. 调整一下参数，看看a,b,c_d对于p_induce pore pressure的time_scale的影响
